@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tianshun Li | Academic Homepage</title>
+    <meta
+      name="description"
+      data-i18n-content="metaDescription"
+      content="Tianshun Li's academic homepage, with robotics projects and demo videos."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="navAria">
+          <a href="#about" data-i18n="navAbout">About</a>
+          <a href="#projects" data-i18n="navProjects">Projects</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+        </nav>
+        <button
+          class="language-toggle"
+          type="button"
+          data-language-toggle
+          aria-label="Switch to Chinese"
+          aria-pressed="false"
+        >
+          中文
+        </button>
+      </div>
+    </header>
+
+    <main class="page" id="top">
+      <section class="hero section" id="about" aria-labelledby="about-title">
+        <div class="hero-main">
+          <h1 id="about-title" data-i18n="heroName">Tianshun Li</h1>
+          <p class="hero-subtitle">Robotics, EAI</p>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <h2 id="projects-title" data-i18n="projectsTitle">Projects</h2>
+        </div>
+
+        <article class="project-entry">
+          <div class="project-summary">
+            <h3 data-i18n="projectAirGroundTitle">Air-Ground Collaboration</h3>
+            <p data-i18n="projectAirGroundDescription">
+              An air-ground robot system for tasks in rough environments. The main work is about
+              passing targets between robots, planning together, and making sure the full loop works
+              in practice.
+            </p>
+          </div>
+          <div class="project-media-grid media-scroll-row" data-auto-scroll-row>
+            <figure class="media-card">
+              <img
+                class="media-image"
+                src="Pasted image.png"
+                alt="Air-ground collaboration system setup"
+                data-i18n-alt="airGroundImageOneAlt"
+                loading="lazy"
+              />
+              <figcaption>
+                <span class="caption-label" data-i18n="airGroundImageOneTitle">
+                  System setup
+                </span>
+                <span class="caption-summary" data-i18n="airGroundImageOneSummary">
+                  Hardware setup for the air-ground collaboration test.
+                </span>
+              </figcaption>
+            </figure>
+            <figure class="media-card">
+              <img
+                class="media-image"
+                src="Pasted image (2).png"
+                alt="Air-ground collaboration experiment scene"
+                data-i18n-alt="airGroundImageTwoAlt"
+                loading="lazy"
+              />
+              <figcaption>
+                <span class="caption-label" data-i18n="airGroundImageTwoTitle">
+                  Experiment scene
+                </span>
+                <span class="caption-summary" data-i18n="airGroundImageTwoSummary">
+                  A closer view of the robot platform used in the experiment.
+                </span>
+              </figcaption>
+            </figure>
+            <figure class="media-card">
+              <div class="video-shell" data-video-card>
+                <video class="media-video" controls preload="metadata" playsinline>
+                  <source src="视频1.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption>
+                <span class="caption-label">
+                  <span data-i18n="realRobotDemo">Real robot demo</span>
+                  <span
+                    class="info-chip"
+                    tabindex="0"
+                    aria-label="Real robot demo note"
+                    data-i18n-aria-label="realRobotDemoNote"
+                    data-i18n-tooltip="airGroundRealTooltip"
+                    data-tooltip="The drone flies on its own. After the downward camera finds a target, it sends the target position to the ground robot. The ground robot uses online SLAM to reach it."
+                    >!</span
+                  >
+                </span>
+                <span class="caption-summary" data-i18n="airGroundRealSummary">
+                  Drone detects a target, then the ground robot drives to it.
+                </span>
+              </figcaption>
+            </figure>
+            <figure class="media-card">
+              <div class="video-shell" data-video-card>
+                <video class="media-video" controls preload="metadata" playsinline>
+                  <source src="视频2.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption>
+                <span class="caption-label">
+                  <span data-i18n="simDemo">Simulation demo</span>
+                  <span
+                    class="info-chip"
+                    tabindex="0"
+                    aria-label="Simulation demo note"
+                    data-i18n-aria-label="simDemoNote"
+                    data-i18n-tooltip="airGroundSimTooltip"
+                    data-tooltip="The drone follows the vehicle and handles takeoff and landing."
+                    >!</span
+                  >
+                </span>
+                <span class="caption-summary" data-i18n="airGroundSimSummary">
+                  Drone following, takeoff, and landing in simulation.
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="project-entry">
+          <div class="project-summary">
+            <h3 data-i18n="projectMobileManipulatorTitle">Mobile Manipulator</h3>
+            <p data-i18n="projectMobileManipulatorDescription">
+              A mobile robot with an arm. I use it to test navigation, grasping, and how reliably
+              the platform can switch between different task steps.
+            </p>
+          </div>
+          <div class="project-media-grid">
+            <figure class="media-card">
+              <div class="video-shell" data-video-card>
+                <video class="media-video" controls preload="metadata" playsinline>
+                  <source src="视频3-h264-cut.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption>
+                <span class="caption-label">
+                  <span data-i18n="realRobotDemo">Real robot demo</span>
+                  <span
+                    class="info-chip"
+                    tabindex="0"
+                    aria-label="Real robot demo note"
+                    data-i18n-aria-label="realRobotDemoNote"
+                    data-i18n-tooltip="mobileManipulatorRealTooltip"
+                    data-tooltip="The robot navigates to the target area by itself. A four-axis arm then picks and moves the object."
+                    >!</span
+                  >
+                </span>
+                <span class="caption-summary" data-i18n="mobileManipulatorRealSummary">
+                  Autonomous navigation followed by object grasping.
+                </span>
+              </figcaption>
+            </figure>
+            <figure class="media-card">
+              <div class="video-shell" data-video-card>
+                <video class="media-video" controls preload="metadata" playsinline>
+                  <source src="视频4.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption>
+                <span class="caption-label">
+                  <span data-i18n="simDemo">Simulation demo</span>
+                  <span
+                    class="info-chip"
+                    tabindex="0"
+                    aria-label="Simulation demo note"
+                    data-i18n-aria-label="simDemoNote"
+                    data-i18n-tooltip="mobileManipulatorSimTooltip"
+                    data-tooltip="Navigation and grasping are tested as one closed-loop task in Gazebo."
+                    >!</span
+                  >
+                </span>
+                <span class="caption-summary" data-i18n="mobileManipulatorSimSummary">
+                  A Gazebo task loop for navigation and grasping.
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <article class="project-entry">
+          <div class="project-summary">
+            <h3 data-i18n="projectWheeledHumanoidTitle">Wheeled Humanoid Robot</h3>
+            <p data-i18n="projectWheeledHumanoidDescription">
+              A wheeled humanoid platform for navigation and arm-based manipulation. The focus is
+              on getting useful motion and simple manipulation skills running on the real robot.
+            </p>
+          </div>
+          <div class="project-media-grid">
+            <figure class="media-card">
+              <div class="video-shell" data-video-card>
+                <video class="media-video" controls preload="metadata" playsinline>
+                  <source src="视频6.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption>
+                <span class="caption-label">
+                  <span data-i18n="realRobotDemo">Real robot demo</span>
+                  <span
+                    class="info-chip"
+                    tabindex="0"
+                    aria-label="Real robot demo note"
+                    data-i18n-aria-label="realRobotDemoNote"
+                    data-i18n-tooltip="wheeledHumanoidRealTooltip"
+                    data-tooltip="The robot reaches the target through autonomous navigation. An ACT policy runs in real time on a Jetson Orin Nano for online grasping after training."
+                    >!</span
+                  >
+                </span>
+                <span class="caption-summary" data-i18n="wheeledHumanoidRealSummary">
+                  Navigation and learned grasping running on the real robot.
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <h2 id="contact-title" data-i18n="contactTitle">Contact</h2>
+        </div>
+        <div class="contact-info">
+          <p><a href="mailto:litianshun.cn@gmail.com">litianshun.cn@gmail.com</a></p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (() => {
+        const translations = {
+          en: {
+            documentTitle: "Tianshun Li | Academic Homepage",
+            metaDescription:
+              "Tianshun Li's academic homepage, with robotics projects and demo videos.",
+            heroName: "Tianshun Li",
+            languageToggle: "中文",
+            languageToggleLabel: "Switch to Chinese",
+            navAria: "Main navigation",
+            navAbout: "About",
+            navProjects: "Projects",
+            navContact: "Contact",
+            projectsTitle: "Projects",
+            contactTitle: "Contact",
+            realRobotDemo: "Real robot demo",
+            simDemo: "Simulation demo",
+            realRobotDemoNote: "Real robot demo note",
+            simDemoNote: "Simulation demo note",
+            projectAirGroundTitle: "Air-Ground Collaboration",
+            projectAirGroundDescription:
+              "An air-ground robot system for tasks in rough environments. The main work is about passing targets between robots, planning together, and making sure the full loop works in practice.",
+            airGroundRealTooltip:
+              "The drone flies on its own. After the downward camera finds a target, it sends the target position to the ground robot. The ground robot uses online SLAM to reach it.",
+            airGroundImageOneAlt: "Air-ground collaboration system setup",
+            airGroundImageOneTitle: "System setup",
+            airGroundImageOneSummary:
+              "Hardware setup for the air-ground collaboration test.",
+            airGroundImageTwoAlt: "Air-ground collaboration experiment scene",
+            airGroundImageTwoTitle: "Experiment scene",
+            airGroundImageTwoSummary:
+              "A closer view of the robot platform used in the experiment.",
+            airGroundRealSummary:
+              "Drone detects a target, then the ground robot drives to it.",
+            airGroundSimTooltip:
+              "The drone follows the vehicle and handles takeoff and landing.",
+            airGroundSimSummary: "Drone following, takeoff, and landing in simulation.",
+            projectMobileManipulatorTitle: "Mobile Manipulator",
+            projectMobileManipulatorDescription:
+              "A mobile robot with an arm. I use it to test navigation, grasping, and how reliably the platform can switch between different task steps.",
+            mobileManipulatorRealTooltip:
+              "The robot navigates to the target area by itself. A four-axis arm then picks and moves the object.",
+            mobileManipulatorRealSummary:
+              "Autonomous navigation followed by object grasping.",
+            mobileManipulatorSimTooltip:
+              "Navigation and grasping are tested as one closed-loop task in Gazebo.",
+            mobileManipulatorSimSummary:
+              "A Gazebo task loop for navigation and grasping.",
+            projectWheeledHumanoidTitle: "Wheeled Humanoid Robot",
+            projectWheeledHumanoidDescription:
+              "A wheeled humanoid platform for navigation and arm-based manipulation. The focus is on getting useful motion and simple manipulation skills running on the real robot.",
+            wheeledHumanoidRealTooltip:
+              "The robot reaches the target through autonomous navigation. An ACT policy runs in real time on a Jetson Orin Nano for online grasping after training.",
+            wheeledHumanoidRealSummary:
+              "Navigation and learned grasping running on the real robot.",
+          },
+          zh: {
+            documentTitle: "李天顺 | Academic Homepage",
+            metaDescription: "李天顺的学术个人主页，展示机器人项目与演示视频。",
+            heroName: "李天顺",
+            languageToggle: "EN",
+            languageToggleLabel: "Switch to English",
+            navAria: "主导航",
+            navAbout: "关于",
+            navProjects: "项目",
+            navContact: "Hi!",
+            projectsTitle: "项目",
+            contactTitle: "Hi!",
+            realRobotDemo: "真机演示",
+            simDemo: "仿真演示",
+            realRobotDemoNote: "真机演示说明",
+            simDemoNote: "仿真演示说明",
+            projectAirGroundTitle: "空地异构协同",
+            projectAirGroundDescription:
+              "面向复杂环境任务的空地协同平台，聚焦异构主体之间的任务衔接、路径协同与行为一致性验证。",
+            airGroundRealTooltip:
+              "无人机自主飞行，下视相机发现目标后向地面设备发送目标坐标，地面设备在线 SLAM 抵达目标点。",
+            airGroundImageOneAlt: "空地异构协同系统搭建",
+            airGroundImageOneTitle: "系统搭建",
+            airGroundImageOneSummary: "空地协同测试中的硬件平台与实验配置。",
+            airGroundImageTwoAlt: "空地异构协同实验场景",
+            airGroundImageTwoTitle: "实验场景",
+            airGroundImageTwoSummary: "实验中使用的机器人平台近景。",
+            airGroundRealSummary:
+              "无人机识别目标后，地面机器人自主导航到目标点。",
+            airGroundSimTooltip: "无人机跟随车辆，并完成起飞和降落。",
+            airGroundSimSummary: "仿真中的车辆跟随、起飞和降落。",
+            projectMobileManipulatorTitle: "复合机器人",
+            projectMobileManipulatorDescription:
+              "围绕复合式机构设计与多模态运动表现，探索机器人在不同任务条件下的执行能力与切换效率。",
+            mobileManipulatorRealTooltip:
+              "复合机器人自主导航至目标区域，由四轴机械臂进行目标的抓取和搬运。",
+            mobileManipulatorRealSummary:
+              "先自主导航到目标区域，再完成抓取任务。",
+            mobileManipulatorSimTooltip:
+              "在 Gazebo 中完成导航、抓取的任务闭环。",
+            mobileManipulatorSimSummary:
+              "Gazebo 中的导航与抓取闭环任务。",
+            projectWheeledHumanoidTitle: "轮臂式人形机器人",
+            projectWheeledHumanoidDescription:
+              "面向轮式移动与上肢协同操作的一体化平台，聚焦机动性、作业能力与复杂场景下的人形交互表现。",
+            wheeledHumanoidRealTooltip:
+              "机器人基于自主导航完成目标抵达，并在端侧 Jetson Orin Nano 上实时部署 ACT 策略，实现训练后抓取技能的在线推理与执行。",
+            wheeledHumanoidRealSummary:
+              "真机上的自主导航和学习式抓取执行。",
+          },
+        };
+
+        const languageToggle = document.querySelector("[data-language-toggle]");
+        const storedLanguage = window.localStorage.getItem("site-language");
+        let currentLanguage = storedLanguage === "zh" ? "zh" : "en";
+
+        function setLanguage(language) {
+          const dictionary = translations[language];
+
+          document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
+          document.title = dictionary.documentTitle;
+          languageToggle.textContent = dictionary.languageToggle;
+          languageToggle.setAttribute("aria-label", dictionary.languageToggleLabel);
+          languageToggle.setAttribute("aria-pressed", String(language === "zh"));
+
+          document.querySelectorAll("[data-i18n-content]").forEach((element) => {
+            element.setAttribute("content", dictionary[element.dataset.i18nContent]);
+          });
+
+          document.querySelectorAll("[data-i18n]").forEach((element) => {
+            element.textContent = dictionary[element.dataset.i18n];
+          });
+
+          document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+            element.setAttribute("aria-label", dictionary[element.dataset.i18nAriaLabel]);
+          });
+
+          document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+            element.setAttribute("alt", dictionary[element.dataset.i18nAlt]);
+          });
+
+          document.querySelectorAll("[data-i18n-tooltip]").forEach((element) => {
+            element.dataset.tooltip = dictionary[element.dataset.i18nTooltip];
+          });
+
+          window.localStorage.setItem("site-language", language);
+          currentLanguage = language;
+        }
+
+        languageToggle.addEventListener("click", () => {
+          setLanguage(currentLanguage === "en" ? "zh" : "en");
+        });
+
+        setLanguage(currentLanguage);
+
+        const cards = Array.from(document.querySelectorAll("[data-video-card]"));
+        const pageVideos = cards.map((card) => card.querySelector(".media-video"));
+
+        function pauseOthers(activeVideo) {
+          pageVideos.forEach((video) => {
+            if (video !== activeVideo && !video.paused) {
+              video.pause();
+            }
+          });
+        }
+
+        cards.forEach((card) => {
+          const video = card.querySelector(".media-video");
+
+          video.addEventListener("play", () => pauseOthers(video));
+        });
+
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const autoScrollRows = Array.from(document.querySelectorAll("[data-auto-scroll-row]"));
+
+        autoScrollRows.forEach((row) => {
+          const items = Array.from(row.querySelectorAll(".media-card"));
+          if (prefersReducedMotion || items.length < 2) return;
+
+          let activeIndex = 0;
+          let isPaused = false;
+
+          function hasPlayingVideo() {
+            return Array.from(row.querySelectorAll("video")).some((video) => !video.paused);
+          }
+
+          function scrollToNextItem() {
+            if (isPaused || hasPlayingVideo()) return;
+
+            activeIndex = (activeIndex + 1) % items.length;
+            row.scrollTo({
+              left: items[activeIndex].offsetLeft - row.offsetLeft,
+              behavior: "smooth",
+            });
+          }
+
+          const intervalId = window.setInterval(scrollToNextItem, 2000);
+
+          row.addEventListener("mouseenter", () => {
+            isPaused = true;
+          });
+
+          row.addEventListener("mouseleave", () => {
+            isPaused = false;
+          });
+
+          row.addEventListener("focusin", () => {
+            isPaused = true;
+          });
+
+          row.addEventListener("focusout", () => {
+            isPaused = false;
+          });
+
+          row.addEventListener("scroll", () => {
+            const closestItem = items.reduce((closest, item, index) => {
+              const distance = Math.abs(item.offsetLeft - row.offsetLeft - row.scrollLeft);
+              return distance < closest.distance ? { index, distance } : closest;
+            }, { index: activeIndex, distance: Number.POSITIVE_INFINITY });
+
+            activeIndex = closestItem.index;
+          }, { passive: true });
+
+          window.addEventListener("pagehide", () => {
+            window.clearInterval(intervalId);
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
