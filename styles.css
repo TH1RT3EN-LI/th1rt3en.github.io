@@ -278,8 +278,9 @@ img {
 
 .project-entry {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 24px;
+  grid-template-columns: minmax(340px, 380px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
   padding: 22px 0;
 }
 
@@ -297,42 +298,52 @@ img {
 }
 
 .project-media-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.media-scroll-row {
   display: flex;
-  gap: 18px;
+  gap: 16px;
+  min-width: 0;
   overflow-x: auto;
+  overflow-y: hidden;
   overscroll-behavior-inline: contain;
   padding-bottom: 12px;
+  position: relative;
+  isolation: isolate;
   scroll-snap-type: x proximity;
   scrollbar-color: var(--line-strong) transparent;
   scrollbar-width: thin;
 }
 
-.media-scroll-row .media-card {
-  flex: 0 0 clamp(260px, 46%, 380px);
+.project-media-grid .media-card {
+  flex: 0 0 clamp(220px, 28vw, 300px);
+  min-width: 0;
   scroll-snap-align: start;
 }
 
-.media-scroll-row::-webkit-scrollbar {
+.project-media-grid .media-card:only-child {
+  flex-basis: min(100%, 340px);
+}
+
+.project-media-grid::-webkit-scrollbar {
   height: 8px;
 }
 
-.media-scroll-row::-webkit-scrollbar-track {
+.project-media-grid::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.media-scroll-row::-webkit-scrollbar-thumb {
+.project-media-grid::-webkit-scrollbar-thumb {
   border-radius: 999px;
   background: var(--line-strong);
 }
 
 .media-card {
   margin: 0;
+  position: relative;
+  z-index: 0;
+}
+
+.media-card:hover,
+.media-card:focus-within {
+  z-index: 4;
 }
 
 .video-shell {
@@ -343,8 +354,8 @@ img {
 .media-card video,
 .media-image {
   aspect-ratio: 16 / 10;
-  border: 1px solid var(--line);
-  background: #efefea;
+  border: 0;
+  background: transparent;
   object-fit: contain;
 }
 
@@ -384,6 +395,7 @@ img {
   font-weight: 700;
   line-height: 1;
   cursor: help;
+  z-index: 2;
 }
 
 .info-chip::after {
@@ -404,6 +416,7 @@ img {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
   opacity: 0;
   pointer-events: none;
+  z-index: 12;
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
@@ -473,16 +486,8 @@ img {
     padding-top: 24px;
   }
 
-  .project-media-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .media-scroll-row {
-    display: flex;
-  }
-
-  .media-scroll-row .media-card {
-    flex-basis: min(82vw, 340px);
+  .project-media-grid .media-card {
+    flex-basis: min(82vw, 300px);
   }
 
   .hero h1 {

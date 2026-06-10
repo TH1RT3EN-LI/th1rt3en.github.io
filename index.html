@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tianshun Li</title>
+    <title>TH1RT3EN</title>
     <meta
       name="description"
       data-i18n-content="metaDescription"
-      content="Tianshun Li's academic homepage, with robotics projects and demo videos."
+      content="Tianshun Li's academic homepage, featuring robotics systems research, ROS 2 projects, and demo videos."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,9 +21,8 @@
     <header class="site-header">
       <div class="site-header-inner">
         <nav class="site-nav" aria-label="Main navigation" data-i18n-aria-label="navAria">
-          <a href="#about" data-i18n="navAbout">About</a>
           <a href="#projects" data-i18n="navProjects">Projects</a>
-          <a href="#contact" data-i18n="navContact">Contact</a>
+          <a href="#contact" data-i18n="navContact">Hi!</a>
         </nav>
         <button
           class="language-toggle"
@@ -41,7 +40,7 @@
       <section class="hero section" id="about" aria-labelledby="about-title">
         <div class="hero-main">
           <h1 id="about-title" data-i18n="heroName">Tianshun Li</h1>
-          <p class="hero-subtitle">Robotics, EAI</p>
+          <p class="hero-subtitle" data-i18n="heroSubtitle">Robotics Systems, Embodied AI</p>
         </div>
       </section>
 
@@ -54,9 +53,10 @@
           <div class="project-summary">
             <h3 data-i18n="projectAirGroundTitle">Air-Ground Collaboration</h3>
             <p data-i18n="projectAirGroundDescription">
-              An air-ground robot system for tasks in rough environments. The main work is about
-              passing targets between robots, planning together, and making sure the full loop works
-              in practice.
+              An air-ground system for weak-GPS forest environments. I integrated the UAV hardware
+              stack, built ROS 2 links between the UAV, UGV, and ground station, and used
+              relative pose registration with soft time synchronization for shared localization and
+              coordinated tasks.
             </p>
           </div>
           <div class="project-media-grid media-scroll-row" data-auto-scroll-row>
@@ -69,12 +69,8 @@
                 loading="lazy"
               />
               <figcaption>
-                <span class="caption-label" data-i18n="airGroundImageOneTitle">
-                  System setup
-                </span>
-                <span class="caption-summary" data-i18n="airGroundImageOneSummary">
-                  Hardware setup for the air-ground collaboration test.
-                </span>
+                <span class="caption-label" data-i18n="airGroundImageOneTitle">UAV</span>
+                <span class="caption-summary" data-i18n="airGroundImageOneSummary"></span>
               </figcaption>
             </figure>
             <figure class="media-card">
@@ -86,12 +82,8 @@
                 loading="lazy"
               />
               <figcaption>
-                <span class="caption-label" data-i18n="airGroundImageTwoTitle">
-                  Experiment scene
-                </span>
-                <span class="caption-summary" data-i18n="airGroundImageTwoSummary">
-                  A closer view of the robot platform used in the experiment.
-                </span>
+                <span class="caption-label" data-i18n="airGroundImageTwoTitle">UGV</span>
+                <span class="caption-summary" data-i18n="airGroundImageTwoSummary"></span>
               </figcaption>
             </figure>
             <figure class="media-card">
@@ -109,12 +101,12 @@
                     aria-label="Real robot demo note"
                     data-i18n-aria-label="realRobotDemoNote"
                     data-i18n-tooltip="airGroundRealTooltip"
-                    data-tooltip="The drone flies on its own. After the downward camera finds a target, it sends the target position to the ground robot. The ground robot uses online SLAM to reach it."
+                    data-tooltip="The UAV detects the target, shares its position, and the ground robot navigates to it with online localization."
                     >!</span
                   >
                 </span>
                 <span class="caption-summary" data-i18n="airGroundRealSummary">
-                  Drone detects a target, then the ground robot drives to it.
+                  The UAV finds the target and guides the UGV to it.
                 </span>
               </figcaption>
             </figure>
@@ -133,12 +125,12 @@
                     aria-label="Simulation demo note"
                     data-i18n-aria-label="simDemoNote"
                     data-i18n-tooltip="airGroundSimTooltip"
-                    data-tooltip="The drone follows the vehicle and handles takeoff and landing."
+                    data-tooltip="Gazebo validation of following, coordinated takeoff and landing, and the full task loop."
                     >!</span
                   >
                 </span>
                 <span class="caption-summary" data-i18n="airGroundSimSummary">
-                  Drone following, takeoff, and landing in simulation.
+                  Following and coordinated takeoff and landing in simulation.
                 </span>
               </figcaption>
             </figure>
@@ -147,10 +139,12 @@
 
         <article class="project-entry">
           <div class="project-summary">
-            <h3 data-i18n="projectMobileManipulatorTitle">Mobile Manipulator</h3>
+            <h3 data-i18n="projectMobileManipulatorTitle">ROS 2 Mobile Manipulator</h3>
             <p data-i18n="projectMobileManipulatorDescription">
-              A mobile robot with an arm. I use it to test navigation, grasping, and how reliably
-              the platform can switch between different task steps.
+              A ROS 2 Mecanum mobile manipulation system with distributed modules for drive,
+              localization, navigation, vision, and arm control. It combines STM32 communication,
+              odometry-IMU fusion, AprilTag pose estimation, and arm IK for closed-loop grasping,
+              with Gazebo validation under sensor noise and communication delay.
             </p>
           </div>
           <div class="project-media-grid">
@@ -169,12 +163,12 @@
                     aria-label="Real robot demo note"
                     data-i18n-aria-label="realRobotDemoNote"
                     data-i18n-tooltip="mobileManipulatorRealTooltip"
-                    data-tooltip="The robot navigates to the target area by itself. A four-axis arm then picks and moves the object."
+                    data-tooltip="The robot navigates to the task area, estimates the target pose from vision, and completes the grasp with the arm."
                     >!</span
                   >
                 </span>
                 <span class="caption-summary" data-i18n="mobileManipulatorRealSummary">
-                  Autonomous navigation followed by object grasping.
+                  Autonomous navigation and vision-guided grasping on the real robot.
                 </span>
               </figcaption>
             </figure>
@@ -193,12 +187,12 @@
                     aria-label="Simulation demo note"
                     data-i18n-aria-label="simDemoNote"
                     data-i18n-tooltip="mobileManipulatorSimTooltip"
-                    data-tooltip="Navigation and grasping are tested as one closed-loop task in Gazebo."
+                    data-tooltip="Gazebo closed-loop validation of navigation, localization, and grasping with injected sensor noise and communication delay."
                     >!</span
                   >
                 </span>
                 <span class="caption-summary" data-i18n="mobileManipulatorSimSummary">
-                  A Gazebo task loop for navigation and grasping.
+                  End-to-end Gazebo validation from navigation to grasping.
                 </span>
               </figcaption>
             </figure>
@@ -209,8 +203,9 @@
           <div class="project-summary">
             <h3 data-i18n="projectWheeledHumanoidTitle">Wheeled Humanoid Robot</h3>
             <p data-i18n="projectWheeledHumanoidDescription">
-              A wheeled humanoid platform for navigation and arm-based manipulation. The focus is
-              on getting useful motion and simple manipulation skills running on the real robot.
+              A wheeled humanoid platform for autonomous navigation and upper-limb manipulation,
+              focused on deploying learned grasping policies on edge compute for stable real-robot
+              execution.
             </p>
           </div>
           <div class="project-media-grid">
@@ -234,7 +229,7 @@
                   >
                 </span>
                 <span class="caption-summary" data-i18n="wheeledHumanoidRealSummary">
-                  Navigation and learned grasping running on the real robot.
+                  Autonomous navigation and learned grasping on the real robot.
                 </span>
               </figcaption>
             </figure>
@@ -256,67 +251,66 @@
       (() => {
         const translations = {
           en: {
-            documentTitle: "Tianshun Li",
+            documentTitle: "TH1RT3EN",
             metaDescription:
-              "Tianshun Li's academic homepage, with robotics projects and demo videos.",
+              "Tianshun Li's academic homepage, featuring robotics systems research, ROS 2 projects, and demo videos.",
             heroName: "Tianshun Li",
+            heroSubtitle: "Robotics Systems, Embodied AI",
             languageToggle: "中文",
             languageToggleLabel: "Switch to Chinese",
             navAria: "Main navigation",
-            navAbout: "About",
             navProjects: "Projects",
-            navContact: "Contact",
+            navContact: "Hi!",
             projectsTitle: "Projects",
-            contactTitle: "Contact",
+            contactTitle: "Hi!",
             realRobotDemo: "Real robot demo",
             simDemo: "Simulation demo",
             realRobotDemoNote: "Real robot demo note",
             simDemoNote: "Simulation demo note",
             projectAirGroundTitle: "Air-Ground Collaboration",
             projectAirGroundDescription:
-              "An air-ground robot system for tasks in rough environments. The main work is about passing targets between robots, planning together, and making sure the full loop works in practice.",
+              "An air-ground system for weak-GPS forest environments. I integrated the UAV hardware stack, built ROS 2 links between the UAV, UGV, and ground station, and used relative pose registration with soft time synchronization for shared localization and coordinated tasks.",
             airGroundRealTooltip:
-              "The drone flies on its own. After the downward camera finds a target, it sends the target position to the ground robot. The ground robot uses online SLAM to reach it.",
-            airGroundImageOneAlt: "Air-ground collaboration system setup",
-            airGroundImageOneTitle: "System setup",
-            airGroundImageOneSummary:
-              "Hardware setup for the air-ground collaboration test.",
-            airGroundImageTwoAlt: "Air-ground collaboration experiment scene",
-            airGroundImageTwoTitle: "Experiment scene",
-            airGroundImageTwoSummary:
-              "A closer view of the robot platform used in the experiment.",
+              "The UAV detects the target, shares its position, and the ground robot navigates to it with online localization.",
+            airGroundImageOneAlt: "Air-ground heterogeneous collaboration system setup",
+            airGroundImageOneTitle: "UAV",
+            airGroundImageOneSummary: "",
+            airGroundImageTwoAlt: "Air-ground heterogeneous collaboration experiment scene",
+            airGroundImageTwoTitle: "UGV",
+            airGroundImageTwoSummary: "",
             airGroundRealSummary:
-              "Drone detects a target, then the ground robot drives to it.",
+              "The UAV finds the target and guides the UGV to it.",
             airGroundSimTooltip:
-              "The drone follows the vehicle and handles takeoff and landing.",
-            airGroundSimSummary: "Drone following, takeoff, and landing in simulation.",
-            projectMobileManipulatorTitle: "Mobile Manipulator",
+              "Gazebo validation of following, coordinated takeoff and landing, and the full task loop.",
+            airGroundSimSummary:
+              "Following and coordinated takeoff and landing in simulation.",
+            projectMobileManipulatorTitle: "ROS 2 Mobile Manipulator",
             projectMobileManipulatorDescription:
-              "A mobile robot with an arm. I use it to test navigation, grasping, and how reliably the platform can switch between different task steps.",
+              "A ROS 2 Mecanum mobile manipulation system with distributed modules for drive, localization, navigation, vision, and arm control. It combines STM32 communication, odometry-IMU fusion, AprilTag pose estimation, and arm IK for closed-loop grasping, with Gazebo validation under sensor noise and communication delay.",
             mobileManipulatorRealTooltip:
-              "The robot navigates to the target area by itself. A four-axis arm then picks and moves the object.",
+              "The robot navigates to the task area, estimates the target pose from vision, and completes the grasp with the arm.",
             mobileManipulatorRealSummary:
-              "Autonomous navigation followed by object grasping.",
+              "Autonomous navigation and vision-guided grasping on the real robot.",
             mobileManipulatorSimTooltip:
-              "Navigation and grasping are tested as one closed-loop task in Gazebo.",
+              "Gazebo closed-loop validation of navigation, localization, and grasping with injected sensor noise and communication delay.",
             mobileManipulatorSimSummary:
-              "A Gazebo task loop for navigation and grasping.",
+              "End-to-end Gazebo validation from navigation to grasping.",
             projectWheeledHumanoidTitle: "Wheeled Humanoid Robot",
             projectWheeledHumanoidDescription:
-              "A wheeled humanoid platform for navigation and arm-based manipulation. The focus is on getting useful motion and simple manipulation skills running on the real robot.",
+              "A wheeled humanoid platform for autonomous navigation and upper-limb manipulation, focused on deploying learned grasping policies on edge compute for stable real-robot execution.",
             wheeledHumanoidRealTooltip:
-              "The robot reaches the target through autonomous navigation. An ACT policy runs in real time on a Jetson Orin Nano for online grasping after training.",
+              "The robot reaches the target through autonomous navigation and runs an ACT policy in real time on a Jetson Orin Nano to perform online inference and execution of learned grasping skills.",
             wheeledHumanoidRealSummary:
-              "Navigation and learned grasping running on the real robot.",
+              "Autonomous navigation and learned grasping on the real robot.",
           },
           zh: {
-            documentTitle: "李天顺",
-            metaDescription: "李天顺的学术个人主页，展示机器人项目与演示视频。",
+            documentTitle: "TH1RT3EN",
+            metaDescription: "李天顺的学术个人主页，展示机器人系统研究、ROS 2 项目与演示视频。",
             heroName: "李天顺",
+            heroSubtitle: "Robotics Systems, Embodied AI",
             languageToggle: "EN",
             languageToggleLabel: "Switch to English",
             navAria: "主导航",
-            navAbout: "关于",
             navProjects: "项目",
             navContact: "Hi!",
             projectsTitle: "项目",
@@ -325,35 +319,36 @@
             simDemo: "仿真演示",
             realRobotDemoNote: "真机演示说明",
             simDemoNote: "仿真演示说明",
-            projectAirGroundTitle: "空地异构协同",
+            projectAirGroundTitle: "面向林下弱 GPS 环境的空地异构协同系统",
             projectAirGroundDescription:
-              "面向复杂环境任务的空地协同平台，聚焦异构主体之间的任务衔接、路径协同与行为一致性验证。",
+              "面向林下弱/无 GPS 环境构建空地异构协同系统，完成 UAV 端飞控、算力平台、深度相机与数传模块集成，并搭建 UAV/UGV 双端 ROS2 通信链路与地面站交互。进一步结合相对位姿配准与时间戳软同步，支撑共享定位、任务触发与协同行为，并在 Gazebo 与实机平台完成验证。",
             airGroundRealTooltip:
-              "无人机自主飞行，下视相机发现目标后向地面设备发送目标坐标，地面设备在线 SLAM 抵达目标点。",
+              "无人机自主观测目标后，将目标位置信息发送给地面机器人，后者依托在线定位完成自主导航。",
             airGroundImageOneAlt: "空地异构协同系统搭建",
-            airGroundImageOneTitle: "系统搭建",
-            airGroundImageOneSummary: "空地协同测试中的硬件平台与实验配置。",
+            airGroundImageOneTitle: "UAV",
+            airGroundImageOneSummary:
+              "",
             airGroundImageTwoAlt: "空地异构协同实验场景",
-            airGroundImageTwoTitle: "实验场景",
-            airGroundImageTwoSummary: "实验中使用的机器人平台近景。",
+            airGroundImageTwoTitle: "UGV",
+            airGroundImageTwoSummary: "",
             airGroundRealSummary:
-              "无人机识别目标后，地面机器人自主导航到目标点。",
-            airGroundSimTooltip: "无人机跟随车辆，并完成起飞和降落。",
-            airGroundSimSummary: "仿真中的车辆跟随、起飞和降落。",
-            projectMobileManipulatorTitle: "复合机器人",
+              "无人机观测目标后，引导地面机器人完成协同导航。",
+            airGroundSimTooltip: "Gazebo 中对跟随、协同起降与任务闭环的全流程验证。",
+            airGroundSimSummary: "仿真中的跟随与协同起降全流程验证。",
+            projectMobileManipulatorTitle: "基于 ROS2 的麦克纳姆移动操作平台与视觉抓取系统",
             projectMobileManipulatorDescription:
-              "围绕复合式机构设计与多模态运动表现，探索机器人在不同任务条件下的执行能力与切换效率。",
+              "构建基于 ROS2 的麦克纳姆移动操作与视觉抓取系统，将底盘驱动、EKF 融合定位、Nav2 导航、视觉检测与机械臂控制解耦为分布式模块。结合 STM32 串口通信、里程计与 IMU 融合、AprilTag 位姿估计和机械臂 IK，实现从感知定位到抓取执行的闭环，并在含传感器噪声与通信延迟的 Gazebo 环境中完成验证。",
             mobileManipulatorRealTooltip:
-              "复合机器人自主导航至目标区域，由四轴机械臂进行目标的抓取和搬运。",
+              "机器人自主导航至任务区域后，基于视觉估计目标位姿，并由机械臂完成抓取执行。",
             mobileManipulatorRealSummary:
-              "先自主导航到目标区域，再完成抓取任务。",
+              "自主导航与视觉引导抓取的真机闭环。",
             mobileManipulatorSimTooltip:
-              "在 Gazebo 中完成导航、抓取的任务闭环。",
+              "在 Gazebo 中注入传感器噪声与通信延迟，完成导航、定位与抓取的闭环验证。",
             mobileManipulatorSimSummary:
-              "Gazebo 中的导航与抓取闭环任务。",
+              "Gazebo 中从导航到抓取的完整流程验证。",
             projectWheeledHumanoidTitle: "轮臂式人形机器人",
             projectWheeledHumanoidDescription:
-              "面向轮式移动与上肢协同操作的一体化平台，聚焦机动性、作业能力与复杂场景下的人形交互表现。",
+              "面向自主导航与上肢操作的轮臂式人形平台，重点在于将学习式抓取策略部署到端侧算力，实现真机上的稳定执行。",
             wheeledHumanoidRealTooltip:
               "机器人基于自主导航完成目标抵达，并在端侧 Jetson Orin Nano 上实时部署 ACT 策略，实现训练后抓取技能的在线推理与执行。",
             wheeledHumanoidRealSummary:
